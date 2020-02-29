@@ -1,0 +1,8 @@
+{
+  "name": "live-class",
+  "version": "0.0.1",
+  "description": "[live-class desc]",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
