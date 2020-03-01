@@ -19,16 +19,20 @@ socket.on('newMessage', function(message) {
 $('#chat-form').on('submit', function(e) {
   e.preventDefault();
 
-  let messageTextbox = $('#chat-message-input');
+  if (userSignedIn) {
+    let messageTextbox = $('#chat-message-input');
 
-  socket.emit(
-    'createMessage',
-    {
-      from: 'User',
-      text: messageTextbox.val(),
-    },
-    function() {
-      messageTextbox.val('');
-    },
-  );
+    socket.emit(
+      'createMessage',
+      {
+        from: 'User',
+        text: messageTextbox.val(),
+      },
+      function() {
+        messageTextbox.val('');
+      },
+    );
+  } else {
+    console.log('please sign in');
+  }
 });
