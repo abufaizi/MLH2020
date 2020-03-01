@@ -15,9 +15,9 @@ let io = socketIO(server);
 app.use(express.static(publicPath));
 
 io.on('connection', socket => {
-  console.log('New user connected123');
+  console.log('New user connected');
 
-  socket.emit('chat message', generateMessage('Admin', 'Welcome to the chat app'));
+  socket.emit('newMessage', generateMessage('Admin', 'Welcome to LiveClass'));
 
   socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 
