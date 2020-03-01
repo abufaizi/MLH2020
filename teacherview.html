@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title>Teacher View</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+<link rel="stylesheet" href="css/teacher.css">
+
+
+<body>
+<!-- <div class="w3-container">
+
+<h2>Progress Bar Width</h2>
+<p>Change the width of the progress bar with the width property:</p>
+
+<div class="w3-light-grey">
+  <div class="w3-grey" style="height:24px;width:25%"></div>
+</div><br>
+
+<div class="w3-light-grey">
+  <div class="w3-grey" style="height:24px;width:50%"></div>
+</div><br>
+
+<div class="w3-light-grey">
+  <div class="w3-grey" style="height:24px;width:75%"></div>
+</div>
+
+</div> -->
+
+
+<progress class="progress is-warning progress1" value="15" max="100" id="progressbar">15%</progress>
+<input type="button" value="Too Slow" class="button is-info" id="b1" onclick=" move(); CountFun();"></input> 
+<div class="countpos" id="showCount"></div>
+
+
+
+<script>
+        function move() {
+  var progress = document.getElementById("progressbar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      progress.value = width
+    }
+  }
+}
+//     function move() {
+//   var progress = document.getElementById("progressbar");
+//   var width = 1;
+//   var id = setInterval(frame, 10);
+
+//   function frame() {
+//     if (width >= 100) {
+//       clearInterval(id);
+//     } else {
+//       width++;
+//       progress.value = width
+//     }
+//   }
+// }
+
+    var cnt=0;
+    function CountFun(){
+     cnt=parseInt(cnt)+parseInt(1);
+     var divData=document.getElementById("showCount");
+     divData.innerHTML="Number of Clicks: ("+cnt +")";//this part has been edited
+
+    }
+  </script>
+
+<!-- <progress class="progress is-success" value="50" max="100" id="progress2">50%</progress>
+<button class="button is-info" id="b2" onclick="move()"> Fine</button> 
+
+
+<progress class="progress is-danger" value="90" max="100" id="progress3">90%</progress>
+<button class="button is-info" id="b3" onclick="move()"> Too Fast</button>  -->
+
+
+
+
+
+</body>
+</html>
