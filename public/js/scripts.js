@@ -23,7 +23,7 @@ $('#close-login-form').click(function() {
 });
 
 $(function() {
-  var socket = io();
+  let socket = io('/my-namespace');
   $('#chat-form').submit(function(e) {
     e.preventDefault(); // prevents page reloading
     socket.emit('chat message', $('#chat-message-input').val());

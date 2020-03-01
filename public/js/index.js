@@ -1,4 +1,4 @@
-let socket = io();
+let socket = io('/my-namespace');
 
 socket.on('connect', function() {
   console.log('connected');
