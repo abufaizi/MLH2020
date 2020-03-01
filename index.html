@@ -1,22 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style>
+    <title>LiveClass</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
   </head>
+
   <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">
+          LiveClass
+        </h1>
+        <p class="subtitle">Log in or sign up to connect to your class!</p>
+        <button class="button is-primary" id="open-signup-button">Sign Up</button>
+        <button class="button is-primary" id="logout-button">Log Out</button>
+        <button class="button is-primary" id="open-login-button">Log In</button>
+      </div>
+
+      <!-- Signup -->
+      <div id="signup-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="card">
+            <div class="card-content">
+              <form id="signup-form">
+                <div class="field">
+                  <label class="label">Email</label>
+
+                  <div class="control">
+                    <input
+                      id="signup-email"
+                      class="input"
+                      type="email"
+                      placeholder="name@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control">
+                    <input id="signup-password" class="input" type="password" />
+                  </div>
+                </div>
+
+                <button class="button is-primary" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <button id="close-signup-form" class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+      <!-- Login -->
+      <div id="login-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="card">
+            <div class="card-content">
+              <form id="login-form">
+                <div class="field">
+                  <label class="label">Email</label>
+
+                  <div class="control">
+                    <input
+                      id="login-email"
+                      class="input"
+                      type="email"
+                      placeholder="name@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control">
+                    <input id="login-password" class="input" type="password" />
+                  </div>
+                </div>
+
+                <button class="button is-primary" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <button id="close-login-form" class="modal-close is-large" aria-label="close"></button>
+      </div>
+    </section>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+
+    <script src="/jquery-3.4.1.js"></script>
+
+    <script src="/scripts.js"></script>
+    <script src="/main.js"></script>
+    <script src="/auth.js"></script>
   </body>
 </html>
