@@ -1,4 +1,11 @@
 // listen for auth status changes
+auth.onAuthStateChanged(user => {
+  if (user == null) {
+    console.log('user is signed out');
+  } else {
+    console.log(user);
+  }
+})
 
 // signup
 const signunForm = document.querySelector('#signup-form');
@@ -11,18 +18,14 @@ signunForm.addEventListener('submit', e => {
   const password = signunForm['signup-password'].value;
 
   // sign up the user
-  auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
-  });
+  auth.createUserWithEmailAndPassword(email, password);
 });
 
 // logout
 const logout = document.querySelector('#logout-button');
 logout.addEventListener('click', e => {
   e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('user signed out');
-  });
+  auth.signOut();
 });
 
 // login
@@ -35,7 +38,5 @@ loginForm.addEventListener('submit', (e) => {
   const email = loginForm['login-email'].value;
   const password = loginForm['login-password'].value;
 
-  auth.signInWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
-  });
+  auth.signInWithEmailAndPassword(email, password);
 })
