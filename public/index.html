@@ -111,6 +111,47 @@
       </form>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <progress class="progress is-warning progress1" value="0" max="100" id="progressbar"
+          >0%</progress
+        >
+
+        <input
+          type="button"
+          value="Too Slow"
+          class="button is-info"
+          id="b1"
+          onclick=" move(); CountFun();"
+        />
+        <div class="countpos" id="showCount"></div>
+
+        <script>
+          function move() {
+            var progress = document.getElementById('progressbar');
+            var width = 1;
+            var id = setInterval(frame, 10);
+
+            function frame() {
+              if (width >= 100) {
+                clearInterval(id);
+              } else {
+                width++;
+                progress.value = width;
+              }
+            }
+          }
+
+          let cnt = 0;
+          function CountFun() {
+            cnt = parseInt(cnt) + parseInt(1);
+            let divData = document.getElementById('showCount');
+            divData.innerHTML = 'Number of Clicks: (' + cnt + ')';
+          }
+        </script>
+      </div>
+    </section>
+
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
