@@ -8,14 +8,17 @@
 
 <body>
 
-<progress class="progress is-warning progress1" value="15" max="100" id="progressbar">15%</progress>
+<progress class="progress is-warning progress1" value="0" max="100" id="progressbar">0%</progress>
+
 <input type="button" value="Too Slow" class="button is-info" id="b1" onclick=" move(); CountFun();"></input> 
 <div class="countpos" id="showCount"></div>
 
 
 
 <script>
-        function move() {
+
+
+  function move() {
   var progress = document.getElementById("progressbar");
   var width = 1;
   var id = setInterval(frame, 10);
@@ -28,7 +31,68 @@
       progress.value = width
     }
   }
-}
+  }
+
+    let cnt=0;
+     function CountFun(){
+     cnt=parseInt(cnt)+parseInt(1);
+     let divData=document.getElementById("showCount");
+     divData.innerHTML="Number of Clicks: ("+cnt +")";
+
+    }
+    
+</script>
+
+
+
+      <!-- // function frame(){
+      //   if (width >= 100){
+      //     console.log("Progress Finished");
+      //   } else {
+      //     width++;
+      //     progress.value = width
+      //   }
+
+      // } -->
+
+
+
+   
+
+
+  <!-- // function move() {
+  // let progress = document.getElementById("progressbar");
+  // let width = 0;
+  // let id = (frame, 10);
+  // function frame(){
+  //   if (width >= 100){
+  //     console.log("Progress Finished");
+  //   } else {
+  //     width++;
+  //     progress.value = width
+  //   }
+
+  // }
+  // }
+
+  // var cnt=0;
+  //   function CountFun(){
+  //    cnt=parseInt(cnt)+parseInt(1);
+  //    var divData=document.getElementById("showCount");
+  //    divData.innerHTML="Number of Clicks: ("+cnt +")";//this part has been edited
+
+  //   }
+//   var id = setInterval(frame, 10);
+
+//   function frame() {
+//     if (width >= 100) {
+//       clearInterval(id);
+//     } else {
+//       width++;
+//       progress.value = width
+//     }
+//   }
+// }
 //     function move() {
 //   var progress = document.getElementById("progressbar");
 //   var width = 1;
@@ -42,18 +106,12 @@
 //       progress.value = width
 //     }
 //   }
-// }
+// } -->
 
-    var cnt=0;
-    function CountFun(){
-     cnt=parseInt(cnt)+parseInt(1);
-     var divData=document.getElementById("showCount");
-     divData.innerHTML="Number of Clicks: ("+cnt +")";//this part has been edited
 
-    }
-  </script>
+ 
 
-<!-- <progress class="progress is-success" value="50" max="100" id="progress2">50%</progress>
+ <!-- <progress class="progress is-success" value="50" max="100" id="progress2">50%</progress>
 <button class="button is-info" id="b2" onclick="move()"> Fine</button> 
 
 

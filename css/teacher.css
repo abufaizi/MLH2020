@@ -6,7 +6,7 @@
     height: 40px;
     top: 50%;
     /* width: 200px; */
-    margin-top: 100px;   /* = -height / 2   */
+    margin-top: 50px;   /* = -height / 2   */
     position: fixed;     /* Fixed is better */
   }
 
