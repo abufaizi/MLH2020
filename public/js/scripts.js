@@ -7,17 +7,17 @@ $('#open-login-button').click(function() {
 });
 
 $('#signup-submit-button').click(function() {
-  $('#signup-modal').removeClass('is-active'); 
+  $('#signup-modal').removeClass('is-active');
 });
 
 $('#close-signup-form').click(function() {
-  $('#signup-modal').removeClass('is-active'); 
+  $('#signup-modal').removeClass('is-active');
 });
 
 $('#login-submit-button').click(function() {
-  $('#login-modal').removeClass('is-active'); 
+  $('#login-modal').removeClass('is-active');
 });
 
 $('#close-login-form').click(function() {
-  $('#login-modal').removeClass('is-active'); 
+  $('#login-modal').removeClass('is-active');
 });
