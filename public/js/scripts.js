@@ -21,3 +21,13 @@ $('#login-submit-button').click(function() {
 $('#close-login-form').click(function() {
   $('#login-modal').removeClass('is-active');
 });
+
+$(function() {
+  var socket = io();
+  $('#chat-form').submit(function(e) {
+    e.preventDefault(); // prevents page reloading
+    socket.emit('chat message', $('#chat-message-input').val());
+    $('#chat-message-input').val('');
+    return false;
+  });
+});
